@@ -10,6 +10,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
+  overflow: hidden; /* Prevents overflow of elements */
 }
 
 .navbar .logo {
@@ -19,8 +20,9 @@
 
 .navbar ul {
   display: flex;
-  gap: 40px;
+  gap: 20px; /* Adjusted gap for consistent spacing */
   list-style: none;
+  margin: 0; /* Ensures no extra margin is added */
 }
 
 .navbar li {
@@ -38,7 +40,9 @@
 .nav-right {
   display: flex;
   align-items: center;
-  gap: max(1vw, 12px);
+  justify-content: space-evenly; /* Evenly spaces items */
+  gap: 16px; /* Ensured even spacing */
+  width: 100%; /* Makes sure items take up all available space */
 }
 
 .navbar select {
@@ -65,15 +69,17 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 25px;
+  padding: 5px 15px; /* Reduced padding for smaller button */
   border-radius: 20px;
-  font-size: 15px;
+  font-size: 14px; /* Adjusted font size for balance */
   font-weight: 500;
   color: #fff;
   background: linear-gradient(135deg, #f77062, #fe5196);
   border: none;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s;
+  min-width: 120px; /* Ensures button doesn't collapse */
+  height: auto;
 }
 
 .navbar button:hover {
@@ -82,7 +88,12 @@
 }
 
 .navbar button img {
-  width: 13px;
+  width: 13px; /* Icon size inside the button */
+  margin-right: 5px; /* Space outside the icon */
+}
+
+.navbar button span {
+  margin-left: 5px; /* Space outside the text */
 }
 
 @media (max-width: 900px) {
@@ -91,22 +102,28 @@
   }
 
   .navbar button {
-    gap: 8px;
-    padding: 8px 18px;
-    font-size: 14px;
+    gap: 5px;
+    padding: 5px 12px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 20px 5%;
+    padding: 15px 5%;
   }
 
   .navbar ul {
-    display: none;
+    display: none; /* Hides menu for smaller screens */
+  }
+
+  .navbar button {
+    gap: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
   }
 
   .navbar button img {
-    width: 12px;
+    width: 10px; /* Adjusted icon size on small screens */
   }
 }
